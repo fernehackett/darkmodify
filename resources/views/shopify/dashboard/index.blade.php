@@ -6,6 +6,7 @@
             "method" => "POST"
         ]) }}
         @token()
+        @sessionToken
         @isset($scriptTag)
             <input type="hidden" name="script_id" value="{{ $scriptTag->script_id }}">
         @endisset
