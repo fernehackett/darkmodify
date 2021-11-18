@@ -33,9 +33,5 @@ class AppServiceProvider extends ServiceProvider
         }
         require_once base_path('resources/macros/form.php');
         $this->app['request']->server->set('HTTPS', 'on');
-
-        Blade::directive('token', function ($expression) {
-            return '<?php echo "<input type = \"hidden\" name=\"token\" value=\"" . request("token") . "\">"; ?>';
-        });
     }
 }

@@ -37,9 +37,9 @@ class HomeController extends Controller
     {
         $shop_url = $request->get("shop");
         $user = User::where("name", $shop_url)->first();
-        $store = $user->store;
-        if ($user) {
-            return response()->view("shopify.script-tags.index", compact("user","store"))
+        if ($user && ($user->plan || $user->shopify_freemium)) {
+            $store = $user->store;
+            return response()->view("shopify.script-tags.index", compact("user", "store"))
                 ->header("Content-Type", "application/javascript")->header("Cache-Control", "no-store, no-cache, must-revalidate");
         } else
             return response("")->header("Content-Type", "application/javascript");
