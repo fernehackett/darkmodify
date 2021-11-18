@@ -30,12 +30,12 @@
         <div @class(["schedule","d-none"=> !$store || $store->schedule == 0])>
             <div class="form-group">
                 <label>Begin At</label>
-                <input type="time" name="begin_at" class="form-control" value="{{ $store->begin_at ? $store->begin_at->format("H:i") : "" }}">
+                <input type="time" name="begin_at" class="form-control" value="{{ $store && $store->begin_at ? $store->begin_at->format("H:i") : "" }}">
             </div>
 
             <div class="form-group">
                 <label>End At</label>
-                <input type="time" name="end_at" class="form-control" value="{{ $store->end_at  ? $store->end_at->format("H:i") : "" }}">
+                <input type="time" name="end_at" class="form-control" value="{{ $store && $store->end_at  ? $store->end_at->format("H:i") : "" }}">
             </div>
         </div>
         <div class="form-group">
