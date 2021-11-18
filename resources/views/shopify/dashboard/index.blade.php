@@ -5,7 +5,7 @@
             "url" => route("shopify.stores.store"),
             "method" => "POST"
         ]) }}
-        @token()
+{{--        @token()--}}
         @sessionToken
         @isset($scriptTag)
             <input type="hidden" name="script_id" value="{{ $scriptTag->script_id }}">
