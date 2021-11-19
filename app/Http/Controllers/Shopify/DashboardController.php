@@ -24,4 +24,9 @@ class DashboardController extends Controller
         $scriptTag = auth()->user()->script_tags()->where("name", "darkmode")->first();
         return view("shopify.dashboard.index", compact("store", "scriptTag"));
     }
+
+    public function instructions()
+    {
+        return view("shopify.instructions.index");
+    }
 }

@@ -4,6 +4,7 @@ Route::group(['middleware'=>["verify.shopify", "billable"]], function () {
     Route::get('/', "Shopify\DashboardController@index")->name("home");
     Route::group(["as"=>"shopify.","namespace"=>"Shopify"], function(){
         Route::post("stores", "StoreController@store")->name("stores.store");
+        Route::get("instructions", "DashboardController@instructions")->name("instructions");
     });
 });
 Route::get('policy', 'HomeController@policy')->name("policy");

@@ -5,7 +5,6 @@
             "url" => route("shopify.stores.store"),
             "method" => "POST"
         ]) }}
-{{--        @token()--}}
         @sessionToken
         @isset($scriptTag)
             <input type="hidden" name="script_id" value="{{ $scriptTag->script_id }}">
@@ -50,6 +49,7 @@
 
         <div class="form-actions mT-10">
             <button type="submit" class="btn btn-outline-success">Submit</button>
+            <a href="{{ route("shopify.instructions") }}">Instructions</a>
         </div>
         {{ Form::close() }}
     </div>
