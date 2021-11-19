@@ -54,6 +54,9 @@ if(toggle){
     }else{
         lightmode()
     }
+    console.log(begin_at)
+    console.log(end_at)
+    console.log(current)
 @else
     @if($store->enable == 1)
         darkmode()
