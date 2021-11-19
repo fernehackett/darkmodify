@@ -46,6 +46,7 @@ if(toggle){
 @endif
 @if($store->schedule == 1 && $store->begin_at && $store->end_at)
     let begin_at = new Date(`{{ $store->begin_at }}`);
+    if(current < begin_at)  begin_at.setDate(begin_at.getDate() - 1)
     let end_at = new Date(`{{ $store->end_at }}`);
     if(end_at < begin_at) end_at.setDate(end_at.getDate() + 1)
     let current = new Date();
