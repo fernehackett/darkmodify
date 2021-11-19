@@ -10,6 +10,10 @@ trait StoreTrait
     {
         return $this->api()->rest('POST', '/admin/api/script_tags.json', $data);
     }
+    public function readScriptTag()
+    {
+        return $this->api()->rest('GET', '/admin/api/script_tags.json');
+    }
     public function deleteScriptTag($script_tag_id)
     {
         return $this->api()->rest('DELETE', "/admin/api/script_tags/{$script_tag_id}.json");

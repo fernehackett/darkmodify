@@ -44,9 +44,6 @@ if(toggle){
         toggle.remove();
     }
 @endif
-@if($store->enable == 1)
-    darkmode()
-@endif
 @if($store->schedule == 1 && $store->begin_at && $store->end_at)
     let begin_at = new Date(`{{ $store->begin_at }}`);
     let end_at = new Date(`{{ $store->end_at }}`);
@@ -57,4 +54,8 @@ if(toggle){
     }else{
         lightmode()
     }
+@else
+    @if($store->enable == 1)
+        darkmode()
+    @endif
 @endif
