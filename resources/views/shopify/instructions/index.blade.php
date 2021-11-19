@@ -5,6 +5,7 @@
 @stop
 @section('content')
     <div class="bgc-white bd bdrs-3 p-20 mB-20">
+        <a class="btn btn-primary" href="{{ route("home") }}">Home</a>
         <div class="row mt-1">
             <div class="col-md-12">
                 <dl>
