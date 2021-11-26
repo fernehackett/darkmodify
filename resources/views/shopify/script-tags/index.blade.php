@@ -39,6 +39,8 @@ if(toggle){
         darkmode()
     })
 }
+console.log(DarkModeEnable)
+if(window.DarkModeEnable === true){
 @if($store->customize != 1)
     if(toggle){
         toggle.remove();
@@ -63,3 +65,4 @@ if(toggle){
         darkmode()
     @endif
 @endif
+}
